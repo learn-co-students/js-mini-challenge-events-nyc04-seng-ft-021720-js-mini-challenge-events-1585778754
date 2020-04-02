@@ -59,6 +59,6 @@ I decided to add the event listener on the entire player-container because I rea
 
 I use if statements to determine whether an action should be run or not. If the classname of the target element is 'like-button' it selects the parent node of that element and then I select the .like class. I could've just used previousSibling to maybe reduce a line or two of code but I felt that using parent node and explicitly pointing it to the .likes class might prove to be better if I ever decide to add an extra ptag or another element in there.
 
-I check to see if if it has any likes, if it doesn't it changes the inner text to 1 like. If it already has at least 1 like, it splits the sentence into an array so I can modify the number in the sentence. I join it and then insert it back into the innerText. 
+I check to see if if it has any likes, if it doesn't it changes the inner text to 1 like. If it already has at least 1 like, it splits the sentence into an array so I can modify the number in the sentence. I join it and then insert it back into the innerText.
 
 ```
