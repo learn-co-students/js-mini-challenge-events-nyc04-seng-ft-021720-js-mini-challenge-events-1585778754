@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Call a query selector on the header and add an event listener to it that states whenever the header is 'clicked', it will call toggleColor(element), where it toggles the style.color for whatever element is passed into that function.
 ```
 
 ## Deliverable 2: Create Player
@@ -43,6 +43,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+I added an event listener on the entire form, that listens to when a submit is entered. I use a preventDefault that prevents it from doing it's normal action(a request, prevents it from refreshing!). I set the values in the form to variables and create a newPlayer object from it which I then run the renderPlayer function with the new object.
 
 ```
 
@@ -54,5 +55,10 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
+I decided to add the event listener on the entire player-container because I realized it may prove to be difficult to attach an 'individual event listener' to a like button once a new player is added. 
+
+I use if statements to determine whether an action should be run or not. If the classname of the target element is 'like-button' it selects the parent node of that element and then I select the .like class. I could've just used previousSibling to maybe reduce a line or two of code but I felt that using parent node and explicitly pointing it to the .likes class might prove to be better if I ever decide to add an extra ptag or another element in there.
+
+I check to see if if it has any likes, if it doesn't it changes the inner text to 1 like. If it already has at least 1 like, it splits the sentence into an array so I can modify the number in the sentence. I join it and then insert it back into the innerText.
 
 ```
