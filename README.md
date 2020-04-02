@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Since the helper function had already done most of the heavy lifting, I just used querySelector to assign the header to a variable and added an event listener to make sure that on each click it would call toggleColor.
 ```
 
 ## Deliverable 2: Create Player
@@ -43,7 +43,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+First I found the form and made it a variable. Then I added a listener for the submit event, and a prevent default for the form. After that, I made variables of each of the values, then created a newPlayer object using the shorthand syntax you showed us earlier. Then I simply used the renderPlayer function.
 ```
 
 ## Deliverable 3: Like Button
@@ -54,5 +54,5 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-
+This one confused me for a long time. First I set a slightly deceptively named variable to player-container, then added an event listener to it. Then I added an if statement, to isolate the actual like button.Then I assigned the parent node to a variable and the likes text to another to allow for a second if statement. If likesText is undefined, I replace it with the string "1 likes" so it can be incremented. If likesText is defined, I split it into an array at each space, then increment the number at position 0, then rejoin the string with the incremented number. 
 ```
