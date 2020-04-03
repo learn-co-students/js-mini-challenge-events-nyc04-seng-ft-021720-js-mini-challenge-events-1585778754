@@ -26,6 +26,9 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
+-Set up a variable header, which grabs the h1 header so that we can more easily reference it in the upcoming code
+-called the addEventListener function with a "click" type and a callback function as parameters
+-called the toggleColor function and passed the event.target (aka our header) through toggleColor
 
 ```
 
@@ -43,6 +46,12 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
+-set a variable playerForm as the actual form to reference easier later. used the form's id to locate it
+-added an event listener to the actual form itself with the "submit" type
+-added the preventDefault function to stop the form from sending the post and refreshing
+-created a variable to save each of the form's field input values via event.target(aka the form itself).forminputfield(eg name).value
+-set up a newPlayerObj and assigned the saved input values to the new object
+-called the already created renderPlayer function and passed our newPlayerObj through it to create the actual player on the page
 
 ```
 
