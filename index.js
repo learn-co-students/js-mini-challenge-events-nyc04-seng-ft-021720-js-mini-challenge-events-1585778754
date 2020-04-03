@@ -32,6 +32,10 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+document.querySelector('#header').addEventListener('click', function(event){
+  toggleColor(event.target);
+});
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"

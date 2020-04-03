@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Add an event listener onto the #header element to listen for the click event. When received, call the helper function and pass it the event's `target` as its argument.
 ```
 
 ## Deliverable 2: Create Player
