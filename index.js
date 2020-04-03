@@ -23,6 +23,7 @@ function renderPlayer(player) {
   playerContainer.append(playerDiv)
 }
 
+
 // for each player in the array, render to the DOM
 PLAYERS.forEach(renderPlayer)
 
@@ -40,7 +41,38 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector(`#header`)
+
+header.addEventListener("click", event => toggleColor(event.target))
 
 /***** Deliverable 2 *****/
 
+let playerForm = document.querySelector(`#new-player-form`)
+
+playerForm.addEventListener("submit", event => {
+  event.preventDefault()
+  const number = event.target.number.value
+  const name = event.target.name.value
+  const nickname = event.target.nickname.value
+  const photo = event.target.photo.value
+  const likes = "1000"
+
+  const newPlayer = {
+    number, name, nickname, photo, likes
+  }
+
+  renderPlayer(newPlayer)
+})
+
 /***** Deliverable 3 *****/
+
+playerContainer.addEventListener("click", event =>{
+  if(event.target.className === "like-button"){
+    const likes = event.target.parentElement.querySelector(`.likes`)
+    let likeCounter = parseInt(likes.textContent)
+    likeCounter += 1
+    likes.innerHTML = `${likeCounter} likes`
+  }
+
+
+})
