@@ -46,5 +46,20 @@ function toggleColor(element) {
 
 
 /***** Deliverable 2 *****/
+document.querySelector('#new-player-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  // create a player object
+  const player = {
+    name: event.target.elements.name.value,
+    number: event.target.elements.number.value,
+    nickname: event.target.elements.nickname.value,
+    photo: event.target.elements.photo.value,
+    likes: 0
+  };
+  // render the player
+  renderPlayer(player);
+  // clear the form
+  event.target.reset();
+});
 
 /***** Deliverable 3 *****/
