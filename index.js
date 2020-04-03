@@ -16,7 +16,7 @@ function renderPlayer(player) {
     <h3>${player.name} (<em>${player.nickname}</em>)</h3>
     <img src="${player.photo}" alt="${player.name}">
     <p class="likes">${player.likes} likes</p>
-    <button class="like-button">❤️</button>
+    <button data-action="like" class="like-button">❤️</button>
   `
 
   // append the element to the container
@@ -29,18 +29,50 @@ PLAYERS.forEach(renderPlayer)
 /***** End of Starter Code ****/
 
 
-
-
 /***** Deliverable 1 *****/
-function toggleColor(element) {
-  if (element.style.color === "red") {
-    element.style.color = "black"
+const head = document.querySelector("h1")
+head.addEventListener("click", function() {
+  if (head.style.color === "red") {
+    head.style.color = "black"
   } else {
-    element.style.color = "red"
+   head.style.color = "red"
   }
-}
-
+})
 
 /***** Deliverable 2 *****/
+const newPlayerForm = document.querySelector("#new-player-form")
+newPlayerForm.addEventListener("submit", function(e) {
+  // always prevent the default action
+  e.preventDefault()
+  console.log(e.target) 
+
+  const number = e.target.number.value
+  const name = e.target.name.value
+  const nickname = e.target.nickname.value
+  const photo = e.target.photo.value
+  const likes = 1000
+
+  // this: 
+  const newPlayer = {
+    number,
+    name,
+    nickname,
+    photo,
+    likes
+  }
+console.log(newPlayer)
+renderPlayer(newPlayer)
+
+})
 
 /***** Deliverable 3 *****/
+const playerList = document.querySelector("#player-list")
+console.log(playerList)
+
+playerList.addEventListener("click", e => {
+  if (e.target.dataset.action === "like") {
+    const player = e.target.closest(".player")
+    const likes = player.querySelector(".likes")
+    likes.textContent = parseInt(likes.textContent) + 1
+  }
+})
