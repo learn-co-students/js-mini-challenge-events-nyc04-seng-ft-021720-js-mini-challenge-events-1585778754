@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+Add an event listener onto the #header element to listen for the click event. When received, call the helper function and pass it the event's `target` as its argument.
 ```
 
 ## Deliverable 2: Create Player
@@ -43,7 +43,7 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+Bind an event listener to the `submit` event on the form. create a "player" object with the necessary data via values from `event.target.elements.___.value`. render the player. call `reset()` on the event target to clear the form.
 ```
 
 ## Deliverable 3: Like Button

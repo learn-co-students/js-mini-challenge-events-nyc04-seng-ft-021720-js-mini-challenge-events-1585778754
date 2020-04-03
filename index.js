@@ -32,6 +32,10 @@ PLAYERS.forEach(renderPlayer)
 
 
 /***** Deliverable 1 *****/
+document.querySelector('#header').addEventListener('click', function(event){
+  toggleColor(event.target);
+});
+
 function toggleColor(element) {
   if (element.style.color === "red") {
     element.style.color = "black"
@@ -42,5 +46,35 @@ function toggleColor(element) {
 
 
 /***** Deliverable 2 *****/
+document.querySelector('#new-player-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  // create a player object
+  const player = {
+    name: event.target.elements.name.value,
+    number: event.target.elements.number.value,
+    nickname: event.target.elements.nickname.value,
+    photo: event.target.elements.photo.value,
+    likes: 0
+  };
+  // render the player
+  renderPlayer(player);
+  // clear the form
+  event.target.reset();
+});
 
 /***** Deliverable 3 *****/
+
+playerContainer.addEventListener('click',function(event){
+  if (event.target.className == 'like-button'){
+    event.preventDefault();
+    // find the like element
+    const likeElement = event.target.previousElementSibling;
+    // get the number of likes
+    let numOfLikes = parseInt(likeElement.textContent.slice(0, -6));
+    // increment it
+    numOfLikes += 1;
+    // rewrite the likes
+    likeElement.textContent = numOfLikes + ' likes';
+  }
+});
+
