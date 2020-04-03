@@ -63,3 +63,18 @@ document.querySelector('#new-player-form').addEventListener('submit', function(e
 });
 
 /***** Deliverable 3 *****/
+
+playerContainer.addEventListener('click',function(event){
+  if (event.target.className == 'like-button'){
+    event.preventDefault();
+    // find the like element
+    const likeElement = event.target.previousElementSibling;
+    // get the number of likes
+    let numOfLikes = parseInt(likeElement.textContent.slice(0, -6));
+    // increment it
+    numOfLikes += 1;
+    // rewrite the likes
+    likeElement.textContent = numOfLikes + ' likes';
+  }
+});
+
